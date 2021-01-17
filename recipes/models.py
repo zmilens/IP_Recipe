@@ -2,13 +2,19 @@ from django.db import models
 
 class Recipe(models.Model):
     title = models.CharField(max_length=100)
+    category = models.ForeignKey('Сategorie', null=True, on_delete= models.PROTECT)
     description = models.TextField(null=True)
     published = models.DateTimeField(auto_now_add=True, db_index=True)
-    category = models.ForeignKey('Сategorie', null=True, on_delete= models.PROTECT)
     author = models.ForeignKey('Author', null=True, on_delete=models.PROTECT)
-    ingredients = models.ManyToManyField('Ingredient')
+    #ingredients = models.ManyToManyField('Ingredient')
+
+    class Meta:
+        db_table = "web_recipe"
+
+
     def __str__(self):
         return self.title
+
 
 
 class Сategorie(models.Model):
@@ -30,6 +36,7 @@ class Ingredient(models.Model):
 
 class Author(models.Model):
     author = models.CharField (max_length=40, db_index=True)
+    level = models.CharField(max_length=20)
     def __str__(self):
         return self.author
 
