@@ -6,7 +6,6 @@ class Recipe(models.Model):
     description = models.TextField(null=True)
     published = models.DateTimeField(auto_now_add=True, db_index=True)
     author = models.ForeignKey('Author', null=True, on_delete=models.PROTECT)
-    #ingredients = models.ManyToManyField('Ingredient')
 
     class Meta:
         db_table = "web_recipe"
@@ -14,7 +13,6 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
-
 
 
 class Сategorie(models.Model):

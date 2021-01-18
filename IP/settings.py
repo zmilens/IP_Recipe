@@ -139,7 +139,8 @@ USE_TZ = True
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 GRAPH_MODELS = {
-  'app_labels': ["recipes", "auth"],
+  'all_applications': True,
+  'group_models': True,
 }
 
 

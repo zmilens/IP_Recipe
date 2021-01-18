@@ -1,6 +1,6 @@
 digraph model_graph {
   // Dotfile by Django-Extensions graph_models
-  // Created: 2021-01-17 21:23
+  // Created: 2021-01-18 03:01
   // Cli Options: -a
 
   fontname = "Roboto"
@@ -570,11 +570,11 @@ digraph model_graph {
       </TABLE>
       >]
   
-    recipes_models_ï¿½ategorie [label=<
+    recipes_models_Ñategorie [label=<
       <TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
       <FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
-      ï¿½ategorie
+      Ñategorie
       </B></FONT></TD></TR>
     
     
@@ -596,11 +596,11 @@ digraph model_graph {
       </TABLE>
       >]
   
-    recipes_models_ï¿½ategory_product [label=<
+    recipes_models_Ñategory_product [label=<
       <TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
       <TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
       <FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
-      ï¿½ategory_product
+      Ñategory_product
       </B></FONT></TD></TR>
     
     
@@ -1157,13 +1157,16 @@ digraph model_graph {
   [label=" abstract\ninheritance"] [arrowhead=empty, arrowtail=none, dir=both];
 
 
-  recipes_models_Recipe -> recipes_models_ï¿½ategorie
+  recipes_models_Recipe -> recipes_models_Ñategorie
   [label=" category (recipe)"] [arrowhead=none, arrowtail=dot, dir=both];
 
   recipes_models_Recipe -> recipes_models_Author
   [label=" author (recipe)"] [arrowhead=none, arrowtail=dot, dir=both];
 
-  recipes_models_Ingredient -> recipes_models_ï¿½ategory_product
+  recipes_models_Recipe -> recipes_models_Ingredient
+  [label=" ingredients (recipe)"] [arrowhead=dot arrowtail=dot, dir=both];
+
+  recipes_models_Ingredient -> recipes_models_Ñategory_product
   [label=" category (ingredient)"] [arrowhead=none, arrowtail=dot, dir=both];
 
 
